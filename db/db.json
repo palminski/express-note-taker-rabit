@@ -14,11 +14,13 @@
     },
     {
       "title": "Note 3",
-      "text": "Test text"
+      "text": "Test text",
+      "id" : "1"
     },
     {
       "title": "Mimikyu",
-      "text": "Test POST"
+      "text": "Test POST",
+      "id": "1"
     },
     {
       "title": "Mimikyu 2",
