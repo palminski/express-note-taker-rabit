@@ -29,7 +29,7 @@ function createNote (body, noteArray) {
 router.get('/notes', (req,res ) => {
     let results = notes;
     console.log(req.body);
-    console.log(notes);
+    
     res.json(results);
 })
 
