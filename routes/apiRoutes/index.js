@@ -46,10 +46,19 @@ function filterByID(noteId, notesArray) {
 
 //<><><><><>< GET REQUESTS ><><><><><>
 router.get('/notes', (req,res ) => {
+
+    for (let i = 0; i < notes.length; i++)
+    {
+        notes[i].id = i.toString();
+    }
+
+    fs.writeFileSync(
+        path.join(__dirname,'../../db/db.json'),
+        JSON.stringify({ notes: notes},null,2)
+    );
+
     let results = notes;
     res.json(results);
-
- 
 })
 
 //<><><><><>< POST REQUESTS ><><><><><>
