@@ -26,6 +26,11 @@ function createNote (body, noteArray) {
     return note;
 }
 
+function filterByID(noteId, notesArray) {
+    const result = notesArray.filter(note => note.id === noteId)[0];
+    return result;
+}
+
 //<><><><><>< GET REQUESTS ><><><><><>
 router.get('/notes', (req,res ) => {
     let results = notes;
@@ -36,7 +41,12 @@ router.get('/notes', (req,res ) => {
 
 //<><><><><>< POST REQUESTS ><><><><><>
 router.post('/notes' , (req,res) => {
-    req.body.id = notes[notes.length-1].id + 1;
+    newId = parseInt(notes[notes.length-1].id) + 1;
+    newId = newId.toString();
+    console.log(newId);
+
+    req.body.id = newId;
+    
     console.log(req.body);
 
     
@@ -50,5 +60,15 @@ router.post('/notes' , (req,res) => {
         res.json(note);
     }
 })
+
+//<><><><><>< DELETE REQUESTS ><><><><><>
+router.get('/notes/:id', (req,res ) => {
+    let results = filterByID(req.params.id, notes);
+    console.log(results);
+    
+    res.json(results);
+})
+
+
 
 module.exports = router;
