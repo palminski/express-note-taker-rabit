@@ -1,54 +1,9 @@
 {
   "notes": [
     {
-      "title": "Test Title",
-      "text": "Test text"
-    },
-    {
-      "title": "Note 1",
-      "text": "Test text"
-    },
-    {
-      "title": "Note 2",
-      "text": "Test text"
-    },
-    {
-      "title": "Note 3",
-      "text": "Test text",
-      "id" : "1"
-    },
-    {
       "title": "Mimikyu",
-      "text": "Test POST",
-      "id": "1"
-    },
-    {
-      "title": "Mimikyu 2",
-      "text": "Test POST"
-    },
-    {
-      "title": "Mimikyu 3",
-      "text": "mimikyu 3"
-    },
-    {
-      "title": "test",
-      "text": "test"
-    },
-    {
-      "title": "test",
-      "text": "test"
-    },
-    {
-      "title": "test spelling",
-      "text": "Test POST"
-    },
-    {
-      "title": "test spelling",
-      "text": "Test POST"
-    },
-    {
-      "title": "1",
-      "text": "1"
+      "text": "Mimikyu is a cute and strong Pokémon character!",
+      "id": 3
     }
   ]
 }

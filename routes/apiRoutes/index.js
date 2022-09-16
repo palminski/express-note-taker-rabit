@@ -16,6 +16,7 @@ function validateBody (body) {
 function createNote (body, noteArray) {
     const note = body;
     noteArray.push(note);
+    
 
     fs.writeFileSync(
         path.join(__dirname,'../../db/db.json'),
@@ -35,7 +36,9 @@ router.get('/notes', (req,res ) => {
 
 //<><><><><>< POST REQUESTS ><><><><><>
 router.post('/notes' , (req,res) => {
+    req.body.id = notes[notes.length-1].id + 1;
     console.log(req.body);
+
     
     if (!validateBody(req.body))
     {
