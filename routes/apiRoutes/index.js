@@ -22,8 +22,21 @@ function createNote (body, noteArray) {
         path.join(__dirname,'../../db/db.json'),
         JSON.stringify({ notes: noteArray},null,2)
     );
-
+    console.log(`New note created!`);
     return note;
+}
+
+function deleteNote (noteId, noteArray) {
+    
+    const indexToDelete = noteArray.findIndex(element => element.id === noteId); //Finds correct note to delete
+
+    noteArray.splice(indexToDelete,1); //deletes 1 item at index to delete
+    console.log(`Deleted item with id of ${noteId}`);
+
+    fs.writeFileSync(
+        path.join(__dirname,'../../db/db.json'),
+        JSON.stringify({ notes: noteArray},null,2)
+    );
 }
 
 function filterByID(noteId, notesArray) {
@@ -34,22 +47,18 @@ function filterByID(noteId, notesArray) {
 //<><><><><>< GET REQUESTS ><><><><><>
 router.get('/notes', (req,res ) => {
     let results = notes;
-    console.log(req.body);
-    
     res.json(results);
+
+    console.log(`All notes are being displayed!`);
 })
 
 //<><><><><>< POST REQUESTS ><><><><><>
 router.post('/notes' , (req,res) => {
     newId = parseInt(notes[notes.length-1].id) + 1;
     newId = newId.toString();
-    console.log(newId);
 
     req.body.id = newId;
-    
-    console.log(req.body);
-
-    
+        
     if (!validateBody(req.body))
     {
         res.status(400).send("Illigal Note Found");
@@ -58,14 +67,15 @@ router.post('/notes' , (req,res) => {
     {
         const note = createNote(req.body, notes);
         res.json(note);
+        
     }
 })
 
 //<><><><><>< DELETE REQUESTS ><><><><><>
-router.get('/notes/:id', (req,res ) => {
+router.delete('/notes/:id', (req,res ) => {
     let results = filterByID(req.params.id, notes);
-    console.log(results);
     
+    deleteNote(req.params.id, notes);
     res.json(results);
 })
 
