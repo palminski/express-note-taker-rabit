@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 const htmlRoutes = require("./routes/htmlRoutes");
 const apiRoutes = require("./routes/apiRoutes");
@@ -15,8 +16,8 @@ app.use('/api',apiRoutes);
 app.use('/',htmlRoutes);
 
 
-app.listen('3000', () => {  // http://localhost:3000/
+app.listen(PORT, () => {  // http://localhost:3000/
     console.log("<><><><><><><><><><><><><><><>");
-    console.log("Server now on at port 3000");
+    console.log(`Server now on at port ${PORT}!`);
     console.log("<><><><><><><><><><><><><><><>");
 })

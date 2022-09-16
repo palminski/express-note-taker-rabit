@@ -1,28 +1,9 @@
 {
   "notes": [
     {
-      "title": "Test Title",
-      "text": "Test text"
-    },
-    {
-      "title": "Note 1",
-      "text": "Test text"
-    },
-    {
-      "title": "Note 2",
-      "text": "Test text"
-    },
-    {
-      "title": "Note 3",
-      "text": "Test text"
-    },
-    {
-      "title": "Mimikyu",
-      "text": "Test POST"
-    },
-    {
-      "title": "Mimikyu 2",
-      "text": "Test POST"
+      "title": "How to use",
+      "text": "To view a note click on it on the left side bar.\nTo enter a new note click the plus symbol in upper right.\nTo save note click the save icon beside add note icon once note title and text are entered\nto delete a note click the trash icon beside note to the left",
+      "id": "1"
     }
   ]
 }
