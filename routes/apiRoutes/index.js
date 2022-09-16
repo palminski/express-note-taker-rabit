@@ -49,7 +49,7 @@ router.get('/notes', (req,res ) => {
     let results = notes;
     res.json(results);
 
-    console.log(`All notes are being displayed!`);
+ 
 })
 
 //<><><><><>< POST REQUESTS ><><><><><>
